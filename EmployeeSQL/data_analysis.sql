@@ -29,3 +29,13 @@ USING (dept_no)
 JOIN Employees
 USING (emp_no)
 WHERE to_date = '9999-01-01'
+
+-- (Inner) Join Employees, Dept_emp, and Departments tables to query employee departments:
+
+SELECT emp_no, last_name, first_name, dept_name
+FROM Employees
+JOIN Dept_emp
+USING (emp_no)
+JOIN Departments
+USING (dept_no)
+ORDER BY emp_no
