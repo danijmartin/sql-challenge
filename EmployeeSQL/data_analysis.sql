@@ -60,7 +60,17 @@ USING (emp_no)
 WHERE dept_name = 'Sales'
 ORDER BY emp_no
 
+-- List all employees in the Sales and Development departments, 
+-- including their employee number, last name, first name, and department name.
 
+SELECT emp_no, last_name, first_name, dept_name
+FROM Dept_emp
+JOIN Departments
+USING (dept_no)
+JOIN Employees
+USING (emp_no)
+WHERE dept_name = 'Sales' OR dept_name = 'Development'
+ORDER BY emp_no
 
 
 
