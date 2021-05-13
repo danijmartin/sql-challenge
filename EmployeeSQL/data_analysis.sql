@@ -5,3 +5,8 @@ FROM Employees
 JOIN Salaries
 USING (emp_no);
 
+-- Find employees hired in 1986
+
+SELECT first_name, last_name, hire_date
+FROM Employees
+WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31';
