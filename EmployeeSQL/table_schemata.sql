@@ -1,6 +1,14 @@
 -- Creating tables to hold csv data
 --dates are initially input as varchar to match csv formatting
 
+-- Adding code to drop tables if needed
+DROP TABLE Titles;
+DROP TABLE Salaries;
+DROP TABLE Dept_emp;
+DROP TABLE Dept_manager;
+DROP TABLE Departments;
+DROP TABLE Employees;
+
 CREATE TABLE Employees (
     emp_no integer NOT NULL PRIMARY KEY,
     birth_date varchar(10) NOT NULL,
@@ -11,11 +19,11 @@ CREATE TABLE Employees (
 );
 
 CREATE TABLE Titles (
+	title_id serial NOT NULL PRIMARY KEY,
     emp_no integer NOT NULL,
     title varchar(50) NOT NULL,
     from_date varchar(10) NOT NULL,
     to_date varchar(10) NOT NULL,
-	PRIMARY KEY (emp_no, title),
 	FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
 );
 
