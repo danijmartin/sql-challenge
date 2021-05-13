@@ -18,7 +18,7 @@ FROM Dept_manager
 JOIN Departments
 USING (dept_no)
 JOIN Employees
-USING (emp_no)
+USING (emp_no);
 
 -- Same query as above restricted to find the last/current manager:
 
@@ -28,7 +28,7 @@ JOIN Departments
 USING (dept_no)
 JOIN Employees
 USING (emp_no)
-WHERE to_date = '9999-01-01'
+WHERE to_date = '9999-01-01';
 
 -- (Inner) Join Employees, Dept_emp, and Departments tables to query employee departments:
 
@@ -38,4 +38,15 @@ JOIN Dept_emp
 USING (emp_no)
 JOIN Departments
 USING (dept_no)
-ORDER BY emp_no
+ORDER BY emp_no;
+
+-- List first name, last name, and sex for employees whose first name is "Hercules" 
+-- and last names begin with "B."
+
+SELECT first_name, last_name
+FROM Employees
+WHERE first_name = 'Hercules' AND last_name like 'B%'
+ORDER BY last_name;
+
+
+
