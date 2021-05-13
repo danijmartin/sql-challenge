@@ -72,5 +72,10 @@ USING (emp_no)
 WHERE dept_name = 'Sales' OR dept_name = 'Development'
 ORDER BY emp_no
 
+-- How many employees share each last name?
 
+SELECT last_name, count(last_name)
+FROM Employees
+GROUP BY last_name
+Order BY count(last_name) DESC
 
